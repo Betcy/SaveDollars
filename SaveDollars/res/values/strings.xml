@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SaveDollars</string>
+    <string name="action_settings">Settings</string>
+    <string name="queryPrompt">Enter the Barcode of the product</string>
+    <string name="textPrompt">Product Name</string>
+    <string name="search">Search</string>
+    <string name="price">Price</string>
+    <string name="stock">Stocks</string>
+    <string name="shipping">Ship</string>
+    <string name="edit">Edit</string>
+    <string name="menu">Main Menu</string>
+    <string name="scan">Scan it</string>
+    <string name="snap">Snap it</string>
+    <string name="missingInputTitle">Invalid Input</string>
+    <string name="missingInput">Please, enter a valid barcode!</string>
+    <string name="OK">OK</string>
+    <string name="onlineTotalPrice">Online Price+Shipping</string>
+    <string name="onlinePrice">Online Price</string>
+    <string name="onlineStocks">Online Stocks Available</string>
+    <string name="onlineShippingPrice">Online Shipping Price</string>
+    <string name="searchURL">https://www.googleapis.com/shopping/search/v1/public/products?</string>
+    <string name="key">key=AIzaSyCviFK5fBfTn2saBYxyeEFwEYPjhhOiHwM</string>
+    <string name="country">country=US</string>
+    <string name="pdtName">Product Name</string>
+    <string name="totalPrice">Total</string>
+
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.savedollars"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="17" />
+    
+    <supports-screens
+			android:smallScreens="true"
+				android:normalScreens="true"
+				android:largeScreens= "true"
+				android:xlargeScreens = "true"
+				android:anyDensity="true"
+				android:resizeable="true"
+		/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.savedollars.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.savedollars.ProductTotalPriceDisplay"
+            android:screenOrientation="portrait"
+            android:label="@string/onlineTotalPrice" >
+        </activity>
+        <activity
+            android:name="com.example.savedollars.ProductPriceDisplay"
+            android:screenOrientation="portrait"
+            android:label="@string/onlinePrice" >
+        </activity>
+        <activity
+            android:name="com.example.savedollars.ProductShippingPriceDisplay"
+            android:screenOrientation="portrait"
+            android:label="@string/onlineShippingPrice" >
+        </activity>
+        <activity
+            android:name="com.example.savedollars.ProductStockDisplay"
+            android:screenOrientation="portrait"
+            android:label="@string/onlineStocks" >
+          </activity>
+   <!--     <activity
+            android:name="com.google.zxing.client.android.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+       --> 
+    </application>
+
+</manifest>

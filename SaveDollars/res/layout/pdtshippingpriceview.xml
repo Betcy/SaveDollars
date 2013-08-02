@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:stretchColumns="*" >
+
+ <TextView
+        android:id="@+id/pdtNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pdtName"
+        android:textColor="#000000"
+        android:textSize="@dimen/pdtNametextSize" >
+    </TextView>
+    
+     <Button
+        android:id="@+id/menuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="430dp"
+        android:gravity="center"
+        android:onClick="activity_main"
+        android:text="@string/menu" >
+    </Button>
+
+<!--    <ImageButton
+        android:id="@+id/pdtImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/ic_launcher" >
+    </ImageButton>
+    -->
+    
+    <ImageView android:id="@+id/image"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_margin="10dip"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white" >        
+
+        <Button
+            android:id="@+id/totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".20"
+            android:gravity="center"
+            android:onClick="pdttotalpriceview"
+            android:text="@string/totalPrice" />
+
+        <Button
+            android:id="@+id/priceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight=".20"
+            android:onClick="pdtpriceview"
+            android:text="@string/price"
+             />
+
+        <Button
+            android:id="@+id/stockButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".20"
+            android:gravity="center"
+            android:onClick="pdtstockview"
+            android:text="@string/stock" >
+        </Button>
+        <Button
+            android:id="@+id/shippingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="pdtshippingpriceview"
+            android:text="@string/shipping"
+            android:textSize="23sp"
+            android:textStyle="bold" >
+        </Button>
+
+    </LinearLayout>
+
+ <!--     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/light_orange" >
+
+        <TextView
+            android:id="@+id/merchant1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="42dp"
+            android:text="@string/merchant1"
+            android:textColor="#000000"
+            android:textSize="23sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/merchant1StockView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="42dp"
+            android:text="@string/merchant1ShipPrice"
+            android:textColor="#000000"
+            android:textSize="23sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/merchant2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="82dp"
+            android:text="@string/merchant2"
+            android:textColor="#000000"
+            android:textSize="23sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/merchant2PriceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="82dp"
+            android:text="@string/merchant2ShipPrice"
+            android:textColor="#000000"
+            android:textSize="23sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/merchant3TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="122dp"
+            android:text="@string/merchant3"
+            android:textColor="#000000"
+            android:textSize="23sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/merchant3PriceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="122dp"
+            android:text="@string/merchant3ShipPrice"
+            android:textColor="#000000"
+            android:textSize="23sp" >
+        </TextView>
+        
+        <TextView
+            android:id="@+id/merchant4TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="162dp"
+            android:text="@string/merchant4"
+            android:textColor="#000000"
+            android:textSize="23sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/merchant4PriceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="162dp"
+            android:text="@string/merchant4ShipPrice"
+            android:textColor="#000000"
+            android:textSize="23sp" >
+        </TextView>
+        
+
+        <Button
+            android:id="@+id/menuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="250dp"
+            android:gravity="center"
+            android:text="@string/menu" >
+        </Button>
+    </RelativeLayout>
+    -->
+        
+         <ListView android:id="@id/android:list" 
+      android:layout_width="fill_parent" 
+      android:layout_height="fill_parent"
+      android:background="@android:color/white"
+      
+       />
+
+</LinearLayout>
