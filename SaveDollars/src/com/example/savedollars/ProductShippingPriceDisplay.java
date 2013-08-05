@@ -17,6 +17,7 @@ import org.json.JSONObject;
 
 import com.example.adapter.ListViewAdapter;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.app.Activity;
@@ -24,8 +25,10 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class ProductShippingPriceDisplay extends ListActivity {
 	
@@ -35,6 +38,8 @@ public class ProductShippingPriceDisplay extends ListActivity {
 	private int totalCount = 0;	
 	private String[][] PDT_INFO ;
 	public String pdtName;
+	public String merchantPage;
+	private Map merchantLinkMap = new HashMap();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +90,25 @@ public class ProductShippingPriceDisplay extends ListActivity {
 		ListViewAdapter listv = new ListViewAdapter(this, PDT_INFO);
 
 		setListAdapter(listv);
+		
+		//Bets Added
+		
+		final ListView lv = getListView();
+		
+		lv.setTextFilterEnabled(true);
+		lv.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				lv.getItemAtPosition(position);
+				String pdtKey = PDT_INFO[position][0];
+				String merchantLink = (String) merchantLinkMap.get(pdtKey);
+
+				Uri uri = Uri.parse(merchantLink);
+				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				startActivity(intent);
+
+			}
+		});
 		System.out.println("INFO Updated leter");	}
 
 	/*
@@ -132,6 +156,10 @@ public class ProductShippingPriceDisplay extends ListActivity {
 				   }
 				pdtName = objPrice.getString("title");
 				System.out.println("<BETS> Pdt NAME :"+pdtName);
+				//retrieve merchant page
+				merchantPage = objPrice.getString("link");
+				
+				merchantLinkMap.put(merchantName, merchantPage);
 		   }
 		   
 		   sortMerchantPrices();

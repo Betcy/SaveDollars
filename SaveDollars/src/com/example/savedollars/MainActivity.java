@@ -118,11 +118,11 @@ public class MainActivity extends Activity implements OnClickListener {
 				Intent searchIntent = new Intent(MainActivity.this,
 						ProductTotalPriceDisplay.class);
 
-			//	String search = "691464717759";// "9780321673350";//"9780596527679";//691464717759";//remove
+				String search = "691464717759";// "9780321673350";//"9780596527679";//691464717759";//remove
 												// it after testing
 
-				 searchIntent.putExtra("barcodeNumber", (queryEditText.getText()).toString());//Smita
-				//searchIntent.putExtra("barcodeNumber", search);// remove it
+				// searchIntent.putExtra("barcodeNumber", (queryEditText.getText()).toString());//Smita
+				searchIntent.putExtra("barcodeNumber", search);// remove it
 																// after testing
 
 				startActivity(searchIntent);

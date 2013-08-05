@@ -14,15 +14,7 @@
         android:textSize="@dimen/pdtNametextSize" >
     </TextView>
     
-     <Button
-        android:id="@+id/menuButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="430dp"
-        android:gravity="center"
-        android:onClick="activity_main"
-        android:text="@string/menu" >
-    </Button>
+
 
 <!--    <ImageButton
         android:id="@+id/pdtImageButton"
@@ -84,120 +76,45 @@
             </Button>
     </LinearLayout>
     
-    <!-- <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/light_orange" >
 
-        <TextView
-            android:id="@+id/merchant1TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="42dp"
-            android:text="@string/merchant1"
-            android:textColor="#000000"
-            android:textSize="23sp" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/merchant1TotalPriceView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="42dp"
-            android:text="@string/merchant1TotalPrice"
-            android:textColor="#000000"
-            android:textSize="23sp" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/merchant2TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="82dp"
-            android:text="@string/merchant2"
-            android:textColor="#000000"
-            android:textSize="23sp" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/merchant2TotalPriceView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="82dp"
-            android:text="@string/merchant2TotalPrice"
-            android:textColor="#000000"
-            android:textSize="23sp" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/merchant3TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="122dp"
-            android:text="@string/merchant3"
-            android:textColor="#000000"
-            android:textSize="23sp" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/merchant3TotalPriceView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="122dp"
-            android:text="@string/merchant3TotalPrice"
-            android:textColor="#000000"
-            android:textSize="23sp" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/merchant4TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="162dp"
-            android:text="@string/merchant4"
-            android:textColor="#000000"
-            android:textSize="23sp" >
-        </TextView>
-
-        <TextView
-            android:id="@+id/merchant4TotalPriceView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="162dp"
-            android:text="@string/merchant4TotalPrice"
-            android:textColor="#000000"
-            android:textSize="23sp" >
-        </TextView>
-        
-        <Button
-            android:id="@+id/menuButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="250dp"
-            android:gravity="center"
-            android:onClick = "activity_main"
-            android:text="@string/menu" >
-        </Button>
-
-    </RelativeLayout>
-    -->
          <ListView android:id="@id/android:list" 
-      android:layout_width="fill_parent" 
-      android:layout_height="fill_parent"
+      android:layout_width="wrap_content" 
+      android:layout_height="0dp"
       android:background="@android:color/white"
+      android:layout_weight="1"
       
-       />    
+       />
+  
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:background="@android:color/white" >
+        
+              <Button
+        android:id="@+id/menuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="activity_main"
+        android:layout_weight="1"
+        android:text="@string/menu"
+        android:background="@color/light_blue"
+        android:textStyle="bold" >
+    </Button>    
+
+           <Button
+               android:id="@+id/moreInfobutton"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:layout_weight="1"
+                android:text="More Info" 
+                android:background="@color/very_light_green"
+                android:textStyle="bold">
+
+    </Button>
+          
+           
+</LinearLayout>
+
 </LinearLayout>

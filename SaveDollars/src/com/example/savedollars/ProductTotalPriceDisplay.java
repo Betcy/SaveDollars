@@ -19,9 +19,10 @@ email: ksmita@pdx.edu and jbv3@pdx.edu
 
 package com.example.savedollars;
 
+
+
+
 import java.io.BufferedInputStream;
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,17 +46,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.R.string;
-import android.os.Bundle;
-import android.os.StrictMode;
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import android.widget.Toast;
+import android.net.Uri;
 
 import com.example.adapter.ListViewAdapter;
 
@@ -78,6 +80,8 @@ public class ProductTotalPriceDisplay extends ListActivity {
 	public static String [] merchantNames;
 	
 	public String pdtName;
+	public String merchantPage;
+	private Map merchantLinkMap = new HashMap();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -141,9 +145,28 @@ public class ProductTotalPriceDisplay extends ListActivity {
 		ListViewAdapter listv = new ListViewAdapter(this, PDT_INFO);
 
 		setListAdapter(listv);
-		System.out.println("INFO Updated leter");
+		
+		
+		//Bets Added
+		
+		final ListView lv = getListView();
+		
+		lv.setTextFilterEnabled(true);
+		lv.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				lv.getItemAtPosition(position);
+				String pdtKey = PDT_INFO[position][0];
+				String merchantLink = (String) merchantLinkMap.get(pdtKey);
 
+				Uri uri = Uri.parse(merchantLink);
+				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				startActivity(intent);
+
+			}
+		});
 	}
+	        
 
 	private void getProductDetails(String barcodeNumber) {
 		// Smita
@@ -237,7 +260,7 @@ public class ProductTotalPriceDisplay extends ListActivity {
 				   }
 			   
 				//Bets Adding
-				
+				//retrieve product image
 				JSONArray imgObj = objPrice.getJSONArray("images");
 				
 				for (int i = 0; i < imgObj.length(); i++) {
@@ -248,9 +271,15 @@ public class ProductTotalPriceDisplay extends ListActivity {
 
 					System.out.println("<BETS> img Link : " + img);
 				}
-				
+				//retrieve product title
 				pdtName = objPrice.getString("title");
 				System.out.println("<BETS> Pdt NAME :"+pdtName);
+				//retrieve merchant page
+				merchantPage = objPrice.getString("link");
+				
+				merchantLinkMap.put(merchantName, merchantPage);
+				
+				System.out.println("<BETS> merchantName :"+merchantName+" merchantPage:"+merchantPage);
 		   }
 		   
 		   Collections.sort(sortedList);

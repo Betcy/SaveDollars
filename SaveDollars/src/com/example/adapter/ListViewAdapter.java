@@ -35,6 +35,8 @@ public View getView(int position, View convertView, ViewGroup parent) {
     View rowView = inflater.inflate(R.layout.listviewdisplay, parent, false);
     TextView merchantName = (TextView) rowView.findViewById(R.id.merchantName);
     TextView merchantPrice = (TextView) rowView.findViewById(R.id.merchantPrice);
+
+    
     merchantName.setText(values[position][0]);
     merchantPrice.setText(values[position][1]);
 

@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
@@ -6,9 +6,13 @@
     android:focusableInTouchMode="true"
     android:orientation="vertical"
     android:padding="5dp"
-    android:stretchColumns="*" >
+    android:stretchColumns="*" > -->
 
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white" >
  
  <TextView
         android:id="@+id/pdtNameTextView"
@@ -19,15 +23,6 @@
         android:textSize="@dimen/pdtNametextSize" >
     </TextView>
     
-     <Button
-        android:id="@+id/menuButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="430dp"
-        android:gravity="center"
-        android:onClick="activity_main"
-        android:text="@string/menu" >
-    </Button>
 
  <!--    <ImageButton
         android:id="@+id/pdtImageButton"
@@ -45,7 +40,7 @@
     
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:background="@android:color/white" >
         
         <!-- Smita Changes for "total" -->
@@ -92,40 +87,40 @@
         </Button>
     </LinearLayout>
 
-    <!--  <RelativeLayout
+    
+     <ListView android:id="@id/android:list" 
+      android:layout_width="fill_parent" 
+      android:layout_height="0dp"
+      android:background="@android:color/white"
+      android:layout_weight="1"
+      
+       />
+     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/light_orange" >
-        
-           <ListView android:id="@+id/listView"
+        android:layout_height="47dp"
+        android:background="@android:color/white" >
 
-              android:layout_height="match_parent"
-
-              android:layout_width="match_parent"/>
-         
-
-        
-   
         <Button
             android:id="@+id/menuButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="250dp"
+            android:layout_weight="1"
+            android:background="@color/light_blue"
             android:gravity="center"
             android:onClick="activity_main"
-            android:text="@string/menu" >
+            android:text="@string/menu"
+            android:textStyle="bold" >
         </Button>
-        
-    </RelativeLayout>
-    -->
-    
-     <ListView android:id="@id/android:list" 
-      android:layout_width="fill_parent" 
-      android:layout_height="fill_parent"
-      android:background="@android:color/white"
-      
-       />
- 
+
+        <Button
+            android:id="@+id/moreInfobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/very_light_green"
+            android:gravity="center"
+            android:text="More Info"
+            android:textStyle="bold" >
+        </Button>
+    </LinearLayout>
 </LinearLayout>
