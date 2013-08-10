@@ -28,21 +28,16 @@ Smita Kundargi
 
 Jeanne Betcy Victor
 
---------------------------------
-
-
 Project Name:
 ===========
 SaveDollars
 
---------------------------------
-
 Contact Information:
 ===========
-Smita Kundargi:       email - ksmita@pdx.edu
-Jeanne Betcy Victor:  email - jbv3@pdx.edu 
 
---------------------------------
+Smita Kundargi:       email - ksmita@pdx.edu 
+
+Jeanne Betcy Victor:  email - jbv3@pdx.edu 
 
 Project Description:
 ===========
@@ -58,31 +53,19 @@ of the product.  Such smart comparision using our application will definately he
 
 We are using Google's Search API for Shopping. 
 
---------------------------------
-
 License information:
 ===========
 Please check the below link to get the file License in this distribution.       
 
 Link: https://github.com/SmitaBetcy/SaveDollars/blob/master/License
 
---------------------------------
-
 Developer Documents:
 ===========
 Please click on the link below to find developer document:
 
-
-
---------------------------------
-
 User Documents:
 ===========
 Please click on the link below to find user document:
-
-
-
---------------------------------
 
 Source Code:
 ===========
@@ -91,12 +74,8 @@ The source code can be found at the following repository.
 Link for repository: 
 https://github.com/SmitaBetcy/SaveDollars/tree/master/SaveDollars
 
---------------------------------
-
 Build Instruction:
 ===========
-
---------------------------------
 
 Future Enhancements
 ===========
@@ -107,16 +86,11 @@ Future Enhancements
 4. Show related products. Example User who searched for book on java, will get a list of other related books on Java.
 5. Display more information about the product, like image of the product, its reviews etc.
 
-
---------------------------------
-
 User Manual:
 ===========
---------------------------------
 
 Reference
 ===========
---------------------------------
 
 Bug Tracker/ Issue Tracker:
 ===========
@@ -124,10 +98,6 @@ Link for Bug/Issue Tracker:
 https://github.com/SmitaBetcy/SaveDollars/issues?labels=bug&state=open
 
 
---------------------------------
-
-
---------------------------------
 
 
 
