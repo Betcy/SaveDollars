@@ -1,7 +1,7 @@
 SaveDollars
 ===========
 
-***************************************************************************************************************
+/***************************************************************************************************************
 
 Copyright© 2013 Smita Kundargi and Jeanne Betcy Victor
 
@@ -20,30 +20,32 @@ along with this program.
 If not, see <http://www.gnu.org/licenses/>.
 
 For question and/or feedback, please contact Smita kundargi: <ksmita@pdx.edu> or Jeanne Betcy Victor: <jbv3@pdx.edu>
-*****************************************************************************************************************
+*****************************************************************************************************************/
 
 Names:
-
+===========
 Smita Kundargi
+
 Jeanne Betcy Victor
 
 --------------------------------
 
-Project Name:
 
+Project Name:
+===========
 SaveDollars
 
 --------------------------------
 
 Contact Information:
-
+===========
 Smita Kundargi:       email - ksmita@pdx.edu
 Jeanne Betcy Victor:  email - jbv3@pdx.edu 
 
 --------------------------------
 
 Project Description:
-
+===========
 SaveDollars is an Android Application that helps users to compare prices across different eCommerce sites for
 a given product. This can facilitate users to make smart decisions on purchase of the product. 
 The application displays total price (Product Price Plus Shipping price), Product price, Shipping price and 
@@ -59,7 +61,7 @@ We are using Google's Search API for Shopping.
 --------------------------------
 
 License information:
-
+===========
 Please check the below link to get the file License in this distribution.       
 
 Link: https://github.com/SmitaBetcy/SaveDollars/blob/master/License
@@ -67,7 +69,7 @@ Link: https://github.com/SmitaBetcy/SaveDollars/blob/master/License
 --------------------------------
 
 Developer Documents:
-
+===========
 Please click on the link below to find developer document:
 
 
@@ -75,7 +77,7 @@ Please click on the link below to find developer document:
 --------------------------------
 
 User Documents:
-
+===========
 Please click on the link below to find user document:
 
 
@@ -83,7 +85,7 @@ Please click on the link below to find user document:
 --------------------------------
 
 Source Code:
-
+===========
 The source code can be found at the following repository. 
 
 Link for repository: 
@@ -92,12 +94,12 @@ https://github.com/SmitaBetcy/SaveDollars/tree/master/SaveDollars
 --------------------------------
 
 Build Instruction:
-
+===========
 
 --------------------------------
 
 Future Enhancements
-
+===========
 1. Scan Image: Application should be able to capture image of a product and get the details of the product,
    using this image.
 2. Use multiple API, example Ebay, Amazon etc.    
@@ -109,15 +111,15 @@ Future Enhancements
 --------------------------------
 
 User Manual:
-
+===========
 --------------------------------
 
 Reference
-
+===========
 --------------------------------
 
 Bug Tracker/ Issue Tracker:
-
+===========
 Link for Bug/Issue Tracker: 
 https://github.com/SmitaBetcy/SaveDollars/issues?labels=bug&state=open
 
