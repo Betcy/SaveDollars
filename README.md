@@ -1,7 +1,8 @@
 SaveDollars
 ===========
 
-/*****************************************************************************************************************/
+***************************************************************************************************************
+
 Copyright© 2013 Smita Kundargi and Jeanne Betcy Victor
 
 It is a free document. You can redistribute it and/or modify
@@ -15,10 +16,11 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
+along with this program.    
+If not, see <http://www.gnu.org/licenses/>.
 
-For question and/or feedback, please contact Smita kundargi<ksmita@pdx.edu> or Jeanne Betcy Victor<jbv3@pdx.edu>
-/*****************************************************************************************************************/
+For question and/or feedback, please contact Smita kundargi: <ksmita@pdx.edu> or Jeanne Betcy Victor: <jbv3@pdx.edu>
+*****************************************************************************************************************
 
 Names:
 
@@ -58,7 +60,8 @@ We are using Google's Search API for Shopping.
 
 License information:
 
-Please check the below link to get the file License in this distribution. 
+Please check the below link to get the file License in this distribution.       
+
 Link: https://github.com/SmitaBetcy/SaveDollars/blob/master/License
 
 --------------------------------
@@ -94,9 +97,10 @@ Build Instruction:
 --------------------------------
 
 Future Enhancements
+
 1. Scan Image: Application should be able to capture image of a product and get the details of the product,
    using this image.
-2. Use multiple API, example Ebay, Amazon etc.
+2. Use multiple API, example Ebay, Amazon etc.    
 3. Enable user to order the product using our Application.
 4. Show related products. Example User who searched for book on java, will get a list of other related books on Java.
 5. Display more information about the product, like image of the product, its reviews etc.
@@ -114,8 +118,10 @@ Reference
 
 Bug Tracker/ Issue Tracker:
 
-Following is the link to report bugs or issues:
+Link for Bug/Issue Tracker: 
 https://github.com/SmitaBetcy/SaveDollars/issues?labels=bug&state=open
+
+
 --------------------------------
 
 
