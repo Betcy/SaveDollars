@@ -2,19 +2,15 @@ References:
 
 Google Shopping API:
 https://developers.google.com/shopping-search/v1/reference-response-format
-
 License - https://developers.google.com/shopping-search/terms
  
 Zxing Barcode Scanner:
 https://code.google.com/p/zxing/wiki/ScanningViaIntent
-
 License - http://www.apache.org/licenses/LICENSE-2.0
-
 
 JSon: Parsing and Sorting
 http://stackoverflow.com
 License : http://stackexchange.com/legal
-
 
 Listview:
 http://stackoverflow.com/questions/8632529/listview-with-multiple-strings
