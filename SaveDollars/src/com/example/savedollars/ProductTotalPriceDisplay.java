@@ -1,4 +1,7 @@
 /**************************************************************************************
+SaveDollars – An open source Android application that helps users to compare prices 
+of a product across different ecommerce sites and make a decision about purchase.
+
 Copyright (C) 2013 Smita Kundargi and Jeanne Betcy Victor
 
 This program is free software: you can redistribute it and/or modify it under 
@@ -12,15 +15,24 @@ See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with this program. 
 If not, see http://www.gnu.org/licenses/.
 
+Following is the link for the repository: https://github.com/SmitaBetcy/SaveDollars
+
+Please, see the file license in this distribution for license terms. Link is
+https://github.com/SmitaBetcy/SaveDollars/blob/master/License
+
+References:
+https://developers.google.com/shopping-search/v1/reference-response-format
+https://developers.google.com/shopping-search/v1/getting_started
+https://code.google.com/p/zxing/wiki/ScanningViaIntent
+http://stackoverflow.com/questions/8632529/listview-with-multiple-strings
+
+
 Author - Smita Kundargi and Jeanne Betcy Victor
 email: ksmita@pdx.edu and jbv3@pdx.edu
 
  ******************************************************************************************/
 
 package com.example.savedollars;
-
-
-
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -48,18 +60,25 @@ import org.json.JSONObject;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.net.Uri;
 
 import com.example.adapter.ListViewAdapter;
+
+/*******************************************************************************************************
+ ** ProductTotalPriceDisplay is used to invoke the google shopping API and parse
+ * the JSON Data to sort and display the (price+Shipping price) of the product
+ * in ascending order(lower to higher price) for different merchants and it
+ * allows the user to visit the home page of the merchant by one click.
+ *********************************************************************************************************/
 
 public class ProductTotalPriceDisplay extends ListActivity {
 
@@ -68,115 +87,89 @@ public class ProductTotalPriceDisplay extends ListActivity {
 	private Map<Object, Object> sortedMap = new LinkedHashMap<Object, Object>();
 
 	private String JSONData = "";
-	
 	private int totalCount = 0;
-	
-	private String[][] PDT_INFO ;// = 
- 	//private String[][] PDT_INFO = new String{};
-//private String[][] PDT_INFO = new String[20][20];            
-            
-	//smita - 31st july
+	private String[][] PDT_INFO;
 	public Set<Object> merchantNameKeys;
-	public static String [] merchantNames;
-	
+	public static String[] merchantNames;
+
 	public String pdtName;
 	public String merchantPage;
 	private Map merchantLinkMap = new HashMap();
-	
+	private static final String LOG_TAG = "ProductTotalPriceDisplay";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
 		StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
 				.detectDiskReads().detectDiskWrites().detectNetwork()
 				.penaltyLog().build());
-	
-		System.out.println("Inside Product price display class");
-		String barcodeNumber = (getIntent().getStringExtra("barcodeNumber")); 
-		
-		/* If barcode number is scanned from main screen, Google API server
-		 * call is made to retrieve the product information. If we are 
-		 * returning from existing view ( shipping, stocks) no server call
-		 * is made. We display the product information already stored in 
-		 * JSONData
+
+		String barcodeNumber = (getIntent().getStringExtra("barcodeNumber"));
+
+		/*
+		 * If barcode number is scanned from main screen, Google API server call
+		 * is made to retrieve the product information. If we are returning from
+		 * existing view ( shipping, stocks) no server call is made. We display
+		 * the product information already stored in JSONData
 		 */
-		System.out.println("Barcode number is " + barcodeNumber);
-		if(barcodeNumber != null)
-		{
-		   getProductDetails(barcodeNumber);
-		}
-		else
-		{
+
+		if (barcodeNumber != null) {
+			getProductDetails(barcodeNumber);
+		} else {
 			JSONData = (getIntent().getStringExtra("JsonData"));
-			System.out.println("Inside product price , JSON Data is " + JSONData);
 			parseJsonData(JSONData);
 		}
-
-		
 		super.onCreate(savedInstanceState);
-		System.out.println("Invoking pdttotalpriceview");
-		setContentView(R.layout.pdttotalpriceview);
-		
-		//Setting Product Name
-		TextView productName = (TextView) findViewById(R.id.pdtNameTextView);
-		productName.setText(pdtName);
-		
-		Iterator objMapIterator = sortedMap.entrySet().iterator();
 
-		int i = 0;
-		System.out.println("3 Updating INFO totalCount:"+totalCount);
+		if (totalCount == 0) {
+			setContentView(R.layout.nopdtinfo);
+		} else {
 
-		PDT_INFO = new String[totalCount][2];
-		while (objMapIterator.hasNext()) {
-			Map.Entry keyValuePairs = (Map.Entry) objMapIterator.next();
-			System.out.println("i = " + i);
-			System.out.println("Save DDollars Merchant Name"
-					+ String.valueOf(keyValuePairs.getKey()));
-			System.out.println("Save DDollars Merchant Price :"
-					+ String.valueOf(keyValuePairs.getValue()));
-			PDT_INFO[i][0] = String.valueOf(keyValuePairs.getKey());
-			PDT_INFO[i][1] = "$" + String.valueOf(keyValuePairs.getValue());
-			System.out.println("While Array Merchant Name:" + PDT_INFO[i][0]
-					+ "Array Merchant Price:" + PDT_INFO[i][1]);
-			i++;
-		}
-		System.out.println("Total Updated Rows: " + i + " < totalCount:"
-				+ totalCount);
+			setContentView(R.layout.pdttotalpriceview);
 
-		ListViewAdapter listv = new ListViewAdapter(this, PDT_INFO);
+			// Setting Product Name
+			TextView productName = (TextView) findViewById(R.id.pdtNameTextView);
+			productName.setText(pdtName);
 
-		setListAdapter(listv);
-		
-		
-		//Bets Added
-		
-		final ListView lv = getListView();
-		
-		lv.setTextFilterEnabled(true);
-		lv.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				lv.getItemAtPosition(position);
-				String pdtKey = PDT_INFO[position][0];
-				String merchantLink = (String) merchantLinkMap.get(pdtKey);
+			Iterator objMapIterator = sortedMap.entrySet().iterator();
 
-				Uri uri = Uri.parse(merchantLink);
-				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-				startActivity(intent);
-
+			int rowIndex = 0;
+			PDT_INFO = new String[totalCount][2];
+			while (objMapIterator.hasNext()) {
+				Map.Entry keyValuePairs = (Map.Entry) objMapIterator.next();
+				PDT_INFO[rowIndex][0] = String.valueOf(keyValuePairs.getKey());
+				PDT_INFO[rowIndex][1] = "$"
+						+ String.valueOf(keyValuePairs.getValue());
+				rowIndex++;
 			}
-		});
+
+			ListViewAdapter listv = new ListViewAdapter(this, PDT_INFO);
+			setListAdapter(listv);
+			final ListView lv = getListView();
+			lv.setTextFilterEnabled(true);
+			lv.setOnItemClickListener(new OnItemClickListener() {
+				public void onItemClick(AdapterView<?> parent, View view,
+						int position, long id) {
+					lv.getItemAtPosition(position);
+					String pdtKey = PDT_INFO[position][0];
+					String merchantLink = (String) merchantLinkMap.get(pdtKey);
+
+					Uri uri = Uri.parse(merchantLink);
+					Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+					startActivity(intent);
+
+				}
+			});
+		}
 	}
-	        
 
 	private void getProductDetails(String barcodeNumber) {
-		// Smita
 
 		String baseURL = getString(R.string.searchURL);
 		String key = getString(R.string.key);
 		String country = getString(R.string.country);
 		String urlString = baseURL + "&" + key + "&" + country + "&" + "q="
 				+ barcodeNumber;
-
 		try {
 			URL url = new URL(urlString);
 			HttpURLConnection urlConnection = (HttpURLConnection) url
@@ -194,113 +187,83 @@ public class ProductTotalPriceDisplay extends ListActivity {
 			}
 			// JSON data stored as string.
 			data = out.toString();
-			System.out.println("Bets: JSON DATA :" + data); // product
-															// information from
-															// google API in
-			
+
 			parseJsonData(data);
 
-		} 		
-		
-		catch (MalformedURLException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		catch (IOException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		}
+
+		catch (MalformedURLException e) {
+			Log.e(LOG_TAG, "Error processing Google Shopping API URL", e);
+		} catch (IOException e) {
+			Log.e(LOG_TAG, "Error connecting to Google Shopping API", e);
 		}
 
 	}
-	
-	private void parseJsonData(String data)
-	{
-		   //Convert to JSON object for parsing
+
+	private void parseJsonData(String data) {
+		// Convert to JSON object for parsing
 		JSONData = data;
-       try
-       {
-		   JSONObject jsonResponse = new JSONObject(data);
-		   //Get the names 
-		  // JSONArray arr = jsonResponse.names();
-		 		   
-		   JSONArray parsedItems = jsonResponse.getJSONArray("items");
-		   JSONObject inventory = null;
-		   //JSONObject inventory = parsedItems.getJSONObject("inventories");
-		   
-		   
-		   for(int j=0;j<parsedItems.length();j++)
-		   {
-			   
-			   inventory = parsedItems.getJSONObject(j);
-			      
-				JSONObject objPrice = inventory.getJSONObject("product");
-				
-				JSONObject merchant = objPrice.getJSONObject("author");
-				String merchantName = merchant.getString("name");
-				System.out.println("MERCHANT NAME = " + merchantName);
-				//JSONArray merchantArray = merchant.getJSONArray("name");
-				JSONArray invObj = objPrice.getJSONArray("inventories");
-				System.out.println("merchant  array length is : " + merchant.toString());
-				System.out.println("invObj length is : " + invObj.length());
+		try {
+			JSONObject jsonResponse = new JSONObject(data);
+			if (jsonResponse.has("items")) {
+				JSONArray parsedItems = jsonResponse.getJSONArray("items");
 
-				
-				
-				for(int z=0;z<invObj.length();z++)
-				   {
-					   JSONObject price = invObj.getJSONObject(z);
-					   System.out.println(" Json object price is: " + price.toString());
-					   String productPrice = price.getString("price");
-					   String shipping = price.getString("shipping");
-					   float finalPrice = Float.parseFloat(productPrice) + Float.parseFloat(shipping);
-					   System.out.println("Final price is " + finalPrice);
-					   merchantMap.put(merchantName, finalPrice);
-					   sortedList.add(Float.valueOf(finalPrice));					   
-				   }
-			   
-				//Bets Adding
-				//retrieve product image
-				JSONArray imgObj = objPrice.getJSONArray("images");
-				
-				for (int i = 0; i < imgObj.length(); i++) {
-					JSONObject imgLink = imgObj.getJSONObject(i);
-					System.out.println("<BETS> Json imgLink is: "
-							+ imgLink.toString());
-					String img = imgLink.getString("link");
+				JSONObject inventory = null;
+				for (int j = 0; j < parsedItems.length(); j++) {
 
-					System.out.println("<BETS> img Link : " + img);
+					inventory = parsedItems.getJSONObject(j);
+
+					JSONObject objPrice = inventory.getJSONObject("product");
+
+					JSONObject merchant = objPrice.getJSONObject("author");
+					String merchantName = merchant.getString("name");
+					JSONArray invObj = objPrice.getJSONArray("inventories");
+
+					for (int z = 0; z < invObj.length(); z++) {
+						JSONObject price = invObj.getJSONObject(z);
+						String productPrice = price.getString("price");
+
+						String shipping = "0.0";
+						if (price.has("shipping")) {
+							shipping = price.getString("shipping");
+						}
+
+						float finalPrice = Float.parseFloat(productPrice)
+								+ Float.parseFloat(shipping);
+
+						merchantMap.put(merchantName, finalPrice);
+						sortedList.add(Float.valueOf(finalPrice));
+					}
+
+					JSONArray imgObj = objPrice.getJSONArray("images");
+
+					for (int i = 0; i < imgObj.length(); i++) {
+						JSONObject imgLink = imgObj.getJSONObject(i);
+						String img = imgLink.getString("link");
+
+					}
+					// retrieve product title
+					pdtName = objPrice.getString("title");
+					// retrieve merchant page
+					merchantPage = objPrice.getString("link");
+
+					merchantLinkMap.put(merchantName, merchantPage);
+
 				}
-				//retrieve product title
-				pdtName = objPrice.getString("title");
-				System.out.println("<BETS> Pdt NAME :"+pdtName);
-				//retrieve merchant page
-				merchantPage = objPrice.getString("link");
-				
-				merchantLinkMap.put(merchantName, merchantPage);
-				
-				System.out.println("<BETS> merchantName :"+merchantName+" merchantPage:"+merchantPage);
-		   }
-		   
-		   Collections.sort(sortedList);
-		   
-		   System.out.println("Lowest price is " + sortedList.get(0));
-		   sortMerchantPrices();
-		   merchantNameKeys = sortedMap.keySet();
-		   
-		   merchantNames = Arrays.copyOf(merchantNameKeys.toArray(), 
-					merchantNameKeys.toArray().length, String[].class);
-		   
-		   
-		   
-       }
-       catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
+				Collections.sort(sortedList);
+				sortMerchantPrices();
+				merchantNameKeys = sortedMap.keySet();
+				merchantNames = Arrays.copyOf(merchantNameKeys.toArray(),
+						merchantNameKeys.toArray().length, String[].class);
+
+			}
+		} catch (JSONException e) {
+			Log.e(LOG_TAG, "Cannot process JSON results", e);
 		}
 
-		} 
-		 
+	}
+
 	/*
 	 * method : sortMerchantPrices arguments : none description: Sorts a hashmap
 	 * containing merchant names and prices by values ( prices ). The idea is to
@@ -322,9 +285,7 @@ public class ProductTotalPriceDisplay extends ListActivity {
 			Map.Entry entry = (Map.Entry) it.next();
 			sortedMap.put(entry.getKey(), entry.getValue());
 			totalCount++;
-			System.out.println("sortMerchantPrices totalCount:" + totalCount);
 		}
-		System.out.println("sortMerchantPrices final totalCount:" + totalCount);
 
 	}
 
@@ -334,64 +295,41 @@ public class ProductTotalPriceDisplay extends ListActivity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
-	
-	/* Code for the buttons */
-	
-	public void pdttotalpriceview(View v)
-	{
-		System.out.println("At Total Price button");
+
+	/* Invoking appropriate activity when each button(Total,Price,Stock,ShippingCost) is clicked */
+
+	public void pdttotalpriceview(View v) {
 		Intent searchIntent = new Intent(ProductTotalPriceDisplay.this,
 				ProductTotalPriceDisplay.class);
 		searchIntent.putExtra("JsonData", JSONData);
 		startActivity(searchIntent);
 	}
-	
-	public void pdtpriceview(View v)
-	{
-		System.out.println("At price button");
+
+	public void pdtpriceview(View v) {
 		Intent searchIntent = new Intent(ProductTotalPriceDisplay.this,
 				ProductPriceDisplay.class);
 		searchIntent.putExtra("JsonData", JSONData);
 		startActivity(searchIntent);
 	}
 
-	public void pdtshippingpriceview(View v)
-	{
-		System.out.println("At shipping button");
+	public void pdtshippingpriceview(View v) {
 		Intent searchIntent = new Intent(ProductTotalPriceDisplay.this,
 				ProductShippingPriceDisplay.class);
 		searchIntent.putExtra("JsonData", JSONData);
-		//searchIntent.putExtra("merchantNames", );
-		
 		startActivity(searchIntent);
 	}
-	
-	public void pdtstockview(View v)
-	{
-		System.out.println("At stock button");
+
+	public void pdtstockview(View v) {
 		Intent searchIntent = new Intent(ProductTotalPriceDisplay.this,
 				ProductStockDisplay.class);
 		searchIntent.putExtra("JsonData", JSONData);
 		startActivity(searchIntent);
 	}
-	
 
-	public void activity_main(View v){
-		System.out.println("At main menu button");
+	public void activity_main(View v) {
 		Intent searchIntent = new Intent(ProductTotalPriceDisplay.this,
 				MainActivity.class);
 		startActivity(searchIntent);
-		}
-
-
-	/*
-	 * public void onClick(View v) { switch (v.getId()) { case R.id.menuButton:
-	 * System.out.println("At main menu button"); Intent mainMenuIntent = new
-	 * Intent(ProductPriceDisplay.this, MainActivity.class);
-	 * startActivity(mainMenuIntent);
-	 * 
-	 * break; } }
-	 */
+	}
 
 }
