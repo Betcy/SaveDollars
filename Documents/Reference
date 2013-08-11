@@ -1,0 +1,17 @@
+References:
+
+Google Shopping API:
+https://developers.google.com/shopping-search/v1/reference-response-format
+
+License - https://developers.google.com/shopping-search/terms
+ 
+Zxing Barcode Scanner:
+https://code.google.com/p/zxing/wiki/ScanningViaIntent
+
+License - http://www.apache.org/licenses/LICENSE-2.0
+
+Listview:
+http://stackoverflow.com/questions/8632529/listview-with-multiple-strings
+
+JSON Parsing:
+http://stackoverflow.com/questions/18164189/android-json-parse
