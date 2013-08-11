@@ -95,6 +95,8 @@ User Manual:
 
 Reference
 ===========
+Following is the link for reference:
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/Reference
 
 Bug Tracker/ Issue Tracker:
 ===========
