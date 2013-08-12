@@ -65,11 +65,32 @@ Link: https://github.com/SmitaBetcy/SaveDollars/blob/master/License
 
 Developer Documents:
 ===========
-Please click on the link below to find developer document:
+Please click on the links below to find developer documents:
+
+GitHub Manual: 
+
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/GitHub_Manual.doc
+
+Guide for generating API Key: 
+
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/Guide%20For%20Generating%20API%20Key.doc
+
+Installation guide for developers:
+
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/InstallationGuideForDevelopers.doc
+
 
 User Documents:
 ===========
-Please click on the link below to find user document:
+Please click on the links below to find user documents:
+
+Guide for .apk installation:
+
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/GuideFor_APK_Installation.doc
+
+User Manual:
+
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/User%20Manual.doc
 
 Source Code:
 ===========
@@ -78,8 +99,12 @@ The source code can be found at the following repository.
 Link for repository: 
 https://github.com/SmitaBetcy/SaveDollars/tree/master/SaveDollars
 
+
 Build Instruction:
 ===========
+Click on the link below to find Build Instruction
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/InstallationGuideForDevelopers.doc
+
 
 Future Enhancements
 ===========
@@ -92,6 +117,10 @@ Future Enhancements
 
 User Manual:
 ===========
+Click on the link below to find User Manual
+
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/User%20Manual.doc
+
 
 Reference
 ===========
