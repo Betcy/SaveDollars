@@ -51,6 +51,7 @@ displays the merchants in sorted order of the total price.
 The product information can be obtained by scanning the barcode of the product or by entering the barcode number 
 of the product.  Such smart comparision using our application will definately help you SAVE DOLLARS. 
 
+The application is written in Java.
 We are using Google's Search API for Shopping. 
 
 Note:
