@@ -27,6 +27,7 @@ https://developers.google.com/shopping-search/v1/reference-response-format
 https://developers.google.com/shopping-search/v1/getting_started
 https://code.google.com/p/zxing/wiki/ScanningViaIntent
 http://stackoverflow.com/questions/8632529/listview-with-multiple-strings
+http://sweetclipart.com/
 
 
 Author - Smita Kundargi and Jeanne Betcy Victor
@@ -73,6 +74,19 @@ email: ksmita@pdx.edu and jbv3@pdx.edu
 
         <requestFocus />
     </Button>
+    
+    <TextView
+        android:id="@+id/orTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchButton"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/or"
+        android:textColor="@android:color/black"
+        android:textSize="23sp" >
+    </TextView>
+    
 
     <TextView
         android:id="@+id/scanTextView"
@@ -84,7 +98,7 @@ email: ksmita@pdx.edu and jbv3@pdx.edu
         android:background="@drawable/border"
         android:text="@string/scan"
         android:textColor="@android:color/black"
-        android:textSize="21sp" >
+        android:textSize="15sp" >
     </TextView>
 
     <ImageButton
@@ -96,7 +110,9 @@ email: ksmita@pdx.edu and jbv3@pdx.edu
         android:layout_marginTop="65dp"
         android:layout_toRightOf="@id/queryEditText"
         android:background="@null"
-        android:src="@drawable/scan_btn_img" >
+        android:src="@drawable/scan_img" >
     </ImageButton>
+    
+    
 
 </RelativeLayout>

@@ -27,6 +27,7 @@ https://developers.google.com/shopping-search/v1/reference-response-format
 https://developers.google.com/shopping-search/v1/getting_started
 https://code.google.com/p/zxing/wiki/ScanningViaIntent
 http://stackoverflow.com/questions/8632529/listview-with-multiple-strings
+http://sweetclipart.com/
 
 
 Author - Smita Kundargi and Jeanne Betcy Victor
@@ -49,7 +50,7 @@ email: ksmita@pdx.edu and jbv3@pdx.edu
     <string name="edit">Edit</string>
     <string name="MainMenu">Main Menu</string>
     <!-- <string name="scan">Press Scan button to scan it</string> -->
-    <string name="scan">Scan it!</string>
+    <string name="scan">Press Scan button to scan barcode!</string>
     <string name="snap">Snap it</string>
     <string name="missingInputTitle">Invalid Input</string>
     <string name="missingInput">Please, enter a valid barcode!</string>
@@ -64,5 +65,6 @@ email: ksmita@pdx.edu and jbv3@pdx.edu
     <string name="pdtName">Product Name</string>
     <string name="totalPrice">Total</string>
     <string name="NoPdtInfo">Product Info Not Found</string>
+    <string name="or">OR</string>
 
 </resources>

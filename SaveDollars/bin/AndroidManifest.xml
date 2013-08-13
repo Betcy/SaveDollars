@@ -27,6 +27,7 @@ https://developers.google.com/shopping-search/v1/reference-response-format
 https://developers.google.com/shopping-search/v1/getting_started
 https://code.google.com/p/zxing/wiki/ScanningViaIntent
 http://stackoverflow.com/questions/8632529/listview-with-multiple-strings
+http://sweetclipart.com/
 
 
 Author - Smita Kundargi and Jeanne Betcy Victor
@@ -69,7 +70,7 @@ email: ksmita@pdx.edu and jbv3@pdx.edu
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.savedollars.MainActivity"
+            android:name="com.savedollars.MainActivity"
             android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
@@ -79,22 +80,22 @@ email: ksmita@pdx.edu and jbv3@pdx.edu
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.savedollars.ProductTotalPriceDisplay"
+            android:name="com.savedollars.ProductTotalPriceDisplay"
             android:screenOrientation="portrait"
-            android:label="@string/onlineTotalPrice" >
+            android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.example.savedollars.ProductPriceDisplay"
+            android:name="com.savedollars.ProductPriceDisplay"
             android:screenOrientation="portrait"
             android:label="@string/onlinePrice" >
         </activity>
         <activity
-            android:name="com.example.savedollars.ProductShippingPriceDisplay"
+            android:name="com.savedollars.ProductShippingPriceDisplay"
             android:screenOrientation="portrait"
             android:label="@string/onlineShippingPrice" >
         </activity>
         <activity
-            android:name="com.example.savedollars.ProductStockDisplay"
+            android:name="com.savedollars.ProductStockDisplay"
             android:screenOrientation="portrait"
             android:label="@string/onlineStocks" >
           </activity>
