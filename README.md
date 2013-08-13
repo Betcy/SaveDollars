@@ -123,6 +123,13 @@ Click on the link below to find User Manual
 
 https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/User%20Manual.doc
 
+Pre-requistes
+===========
+1. Internet Connection
+2. Android device
+3. Google API Key required for developers
+4. Barcode scanner application to be installed(though our app will take you to 
+install one, if you don’t have one)
 
 Reference
 ===========
