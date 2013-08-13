@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**************************************************************************************
+SaveDollars – An open source Android application that helps users to compare prices 
+of a product across different ecommerce sites and make a decision about purchase.
+
+Copyright (C) 2013 Smita Kundargi and Jeanne Betcy Victor
+
+This program is free software: you can redistribute it and/or modify it under 
+the terms of the GNU General Public License as published by the Free Software Foundation, 
+either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. 
+If not, see http://www.gnu.org/licenses/.
+
+Following is the link for the repository: https://github.com/SmitaBetcy/SaveDollars
+
+Please, see the file license in this distribution for license terms. Link is
+https://github.com/SmitaBetcy/SaveDollars/blob/master/License
+
+References:
+https://developers.google.com/shopping-search/v1/reference-response-format
+https://developers.google.com/shopping-search/v1/getting_started
+https://code.google.com/p/zxing/wiki/ScanningViaIntent
+http://stackoverflow.com/questions/8632529/listview-with-multiple-strings
+http://sweetclipart.com/
+
+
+Author - Smita Kundargi and Jeanne Betcy Victor
+email: ksmita@pdx.edu and jbv3@pdx.edu
+
+ ******************************************************************************************/
+
+-->
+
+<resources>
+
+    <string name="app_name">SaveDollars</string>
+    <string name="action_settings">Settings</string>
+    <string name="queryPrompt">Enter Barcode of the product</string>
+    <string name="textPrompt">Product Name</string>
+    <string name="search">Search</string>
+    <string name="price">Price</string>
+    <string name="stock">Stocks</string>
+    <string name="shipping">ShippingCost</string>
+    <string name="edit">Edit</string>
+    <string name="MainMenu">Main Menu</string>
+    <!-- <string name="scan">Press Scan button to scan it</string> -->
+    <string name="scan">Press Scan button to scan barcode!</string>
+    <string name="snap">Snap it</string>
+    <string name="missingInputTitle">Invalid Input</string>
+    <string name="missingInput">Please, enter a valid barcode!</string>
+    <string name="OK">OK</string>
+    <string name="onlineTotalPrice">Online Price+Shipping</string>
+    <string name="onlinePrice">Online Price</string>
+    <string name="onlineStocks">Online Stocks Available</string>
+    <string name="onlineShippingPrice">Online Shipping Price</string>
+    <string name="searchURL">https://www.googleapis.com/shopping/search/v1/public/products?</string>
+    <string name="key">key=AIzaSyCviFK5fBfTn2saBYxyeEFwEYPjhhOiHwM</string>
+    <string name="country">country=US</string>
+    <string name="pdtName">Product Name</string>
+    <string name="totalPrice">Total</string>
+    <string name="NoPdtInfo">Product Info Not Found</string>
+    <string name="or">OR</string>
+
+</resources>

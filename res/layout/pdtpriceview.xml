@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**************************************************************************************
+SaveDollars – An open source Android application that helps users to compare prices 
+of a product across different ecommerce sites and make a decision about purchase.
+
+Copyright (C) 2013 Smita Kundargi and Jeanne Betcy Victor
+
+This program is free software: you can redistribute it and/or modify it under 
+the terms of the GNU General Public License as published by the Free Software Foundation, 
+either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. 
+If not, see http://www.gnu.org/licenses/.
+
+Following is the link for the repository: https://github.com/SmitaBetcy/SaveDollars
+
+Please, see the file license in this distribution for license terms. Link is
+https://github.com/SmitaBetcy/SaveDollars/blob/master/License
+
+References:
+https://developers.google.com/shopping-search/v1/reference-response-format
+https://developers.google.com/shopping-search/v1/getting_started
+https://code.google.com/p/zxing/wiki/ScanningViaIntent
+http://stackoverflow.com/questions/8632529/listview-with-multiple-strings
+http://sweetclipart.com/
+
+
+Author - Smita Kundargi and Jeanne Betcy Victor
+email: ksmita@pdx.edu and jbv3@pdx.edu
+
+ ******************************************************************************************/
+
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/pdtNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pdtName"
+        android:textColor="#000000"
+        android:textSize="@dimen/pdtNametextSize" >
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@android:color/white" 
+        android:layout_marginTop="20dp"
+        >
+
+        <Button
+            android:id="@+id/totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            
+            android:layout_weight=".20"
+            android:gravity="center"
+            android:onClick="pdttotalpriceview"
+            android:text="@string/totalPrice" />
+
+        <Button
+            android:id="@+id/priceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="pdtpriceview"
+            android:text="@string/price"
+            android:textSize="23sp"
+            android:textStyle="bold" >
+        </Button>
+
+        <Button
+            android:id="@+id/stockButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".20"
+            android:gravity="center"
+            android:onClick="pdtstockview"
+            android:text="@string/stock" >
+        </Button>
+
+        <Button
+            android:id="@+id/shippingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".20"
+            android:gravity="center"
+            android:onClick="pdtshippingpriceview"
+            android:text="@string/shipping" >
+        </Button>
+    </LinearLayout>
+
+    <ListView
+        android:id="@id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:background="@android:color/white" >
+
+        <Button
+            android:id="@+id/menuButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/light_blue"
+            android:gravity="center"
+            android:onClick="activity_main"
+            android:text="@string/MainMenu"
+            android:textSize="20sp"
+            android:textStyle="bold" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>
