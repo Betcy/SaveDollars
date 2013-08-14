@@ -76,7 +76,7 @@ We are using Google's Search API for Shopping.
 
 Note:
 Zxing Barcode scanner's library code is not contained in the repo, but must be downloaded and set up following the 
-https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/InstallationGuideForDevelopers.doc
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/InstallationGuideForDevelopers.pdf
 
 License information:
 ===========
@@ -98,16 +98,15 @@ Please click on the links below to find developer documents:
 
 GitHub Manual: 
 
-https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/GitHub_Manual.doc
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/GitHubManual.pdf
 
 Guide for generating API Key: 
 
-https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/Guide%20For%20Generating%20API%20Key.doc
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/GuideForGenerating_API_Key.pdf
 
 Installation guide for developers:
 
-https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/InstallationGuideForDevelopers.doc
-
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/InstallationGuideForDevelopers.pdf
 
 User Documents:
 ===========
@@ -115,20 +114,19 @@ Please click on the links below to find user documents:
 
 Guide for .apk installation:
 
-https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/GuideFor_APK_Installation.doc
-
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/GuideFor_APK_Installation.pdf
 
 Build Instruction:
 ===========
 Click on the link below to find Build Instruction
-https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/InstallationGuideForDevelopers.doc
 
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/InstallationGuideForDevelopers.pdf
 
 User Manual:
 ===========
 Click on the link below to find User Manual
 
-https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/User%20Manual.doc
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/UserManual.pdf
 
 Pre-requistes
 ===========
