@@ -116,9 +116,6 @@ Guide for .apk installation:
 
 https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/GuideFor_APK_Installation.doc
 
-User Manual:
-
-https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/User%20Manual.doc
 
 Build Instruction:
 ===========
