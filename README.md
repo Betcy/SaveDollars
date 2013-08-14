@@ -76,7 +76,7 @@ We are using Google's Search API for Shopping.
 
 Note:
 Zxing Barcode scanner's library code is not contained in the repo, but must be downloaded and set up following the 
-https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/InstallationGuideForDevelopers.docx
+https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/InstallationGuideForDevelopers.doc
 
 License information:
 ===========
