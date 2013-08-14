@@ -1,7 +1,7 @@
 SaveDollars
 ===========
 
-/****************************************************************************************************************
+/**********************************************************************************************************************
 
 SaveDollars – An open source Android application that helps users to compare prices of a product across different 
 ecommerce sites and make a decision about purchase.
@@ -26,15 +26,19 @@ https://github.com/SmitaBetcy/SaveDollars/blob/master/License
 
 References:
 https://developers.google.com/shopping-search/v1/reference-response-format
+
 https://developers.google.com/shopping-search/v1/getting_started
+
 https://code.google.com/p/zxing/wiki/ScanningViaIntent
+
 http://stackoverflow.com/questions/8632529/listview-with-multiple-strings
+
 http://sweetclipart.com/
 
 Author - Smita Kundargi and Jeanne Betcy Victor
 email: ksmita@pdx.edu and jbv3@pdx.edu
 
-***************************************************************************************************************/
+*********************************************************************************************************************/
 
 Names:
 ===========
@@ -79,6 +83,14 @@ Please check the below link to get the file License in this distribution.
 
 Link: https://github.com/SmitaBetcy/SaveDollars/blob/master/License
 
+Source Code:
+===========
+The source code can be found at the following repository. 
+
+Link for repository: 
+https://github.com/SmitaBetcy/SaveDollars/tree/master/SaveDollars
+
+
 Developer Documents:
 ===========
 Please click on the links below to find developer documents:
@@ -108,28 +120,11 @@ User Manual:
 
 https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/User%20Manual.doc
 
-Source Code:
-===========
-The source code can be found at the following repository. 
-
-Link for repository: 
-https://github.com/SmitaBetcy/SaveDollars/tree/master/SaveDollars
-
-
 Build Instruction:
 ===========
 Click on the link below to find Build Instruction
 https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/InstallationGuideForDevelopers.doc
 
-
-Future Enhancements
-===========
-1. Scan Image: Application should be able to capture image of a product and get the details of the product,
-   using this image.
-2. Use multiple API, example Ebay, Amazon etc.    
-3. Enable user to order the product using our Application.
-4. Show related products. Example User who searched for book on java, will get a list of other related books on Java.
-5. Display more information about the product, like image of the product, its reviews etc.
 
 User Manual:
 ===========
@@ -144,6 +139,15 @@ Pre-requistes
 3. Google API Key required for developers
 4. Barcode scanner application to be installed(though our app will take you to 
 install one, if you don’t have one)
+
+Future Enhancements
+===========
+1. Scan Image: Application should be able to capture image of a product and get the details of the product,
+   using this image.
+2. Use multiple API, example Ebay, Amazon etc.    
+3. Enable user to order the product using our Application.
+4. Show related products. Example User who searched for book on java, will get a list of other related books on Java.
+5. Display more information about the product, like image of the product, its reviews etc.
 
 Reference
 ===========
