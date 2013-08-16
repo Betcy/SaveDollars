@@ -160,7 +160,6 @@ PPT Presentation:
 
 https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/SaveDollarsPPT.pdf
 
-https://github.com/SmitaBetcy/SaveDollars/blob/master/Documents/SaveDollarsPPT.ppt
 
 
 
